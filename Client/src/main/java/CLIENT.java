@@ -27,18 +27,16 @@ public class CLIENT {
                         System.out.print("New student: ");
                         scanner.nextLine();
                         String student1 = scanner.nextLine();
-                        printList(crud.addStudent(student1));
-                        crud_2.addStudent(student1);
+                        printList(crud.addStudent(student1, false));
                         break;
                     case 2:
                         System.out.print("Delete student: ");
                         scanner.nextLine();
                         String student2 = scanner.nextLine();
-                        printList(crud.deleteStudents(student2));
-                        crud_2.addStudent(student2);
+                        printList(crud.deleteStudents(student2, false));
                         break;
                     case 3:
-                        printList(crud.getStudents());
+                        printList(crud.getStudents(false));
                         break;
                     default: flag = false;
                 }

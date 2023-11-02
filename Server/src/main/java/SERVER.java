@@ -1,6 +1,7 @@
 import java.net.MalformedURLException;
 import java.net.UnknownHostException;
 import java.rmi.Naming;
+import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.sql.SQLException;
@@ -23,6 +24,8 @@ public class SERVER {
         } catch (RemoteException e) {
             e.printStackTrace();
         } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        } catch (NotBoundException e) {
             throw new RuntimeException(e);
         }
     }
